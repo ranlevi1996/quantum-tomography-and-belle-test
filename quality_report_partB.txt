@@ -1,0 +1,432 @@
+
+=================================================
+[2026-02-04 15:48:55] Part B run
+data_dir: /Users/ranle/Downloads/RanNofit/RanNofit2/partb
+roi_cache: roi_cache_partB.json
+threshold=0.81, peak_distance=20, window=12
+bit=bit4 alpha=-45 beta=-22.5
+  starts(A,B)=(58, 58), start_used(min)=58
+  peaks(A,B)=(11,9), N=9
+bit=bit11 alpha=-45 beta=22.5
+  starts(A,B)=(92, 89), start_used(min)=89
+  peaks(A,B)=(10,8), N=0
+bit=bit10 alpha=-45 beta=67.5
+  starts(A,B)=(49, 51), start_used(min)=49
+  peaks(A,B)=(9,19), N=9
+bit=bit9 alpha=-45 beta=112.5
+  starts(A,B)=(24, 25), start_used(min)=24
+  peaks(A,B)=(10,10), N=10
+bit=bit8 alpha=0 beta=-22.5
+  starts(A,B)=(81, 80), start_used(min)=80
+  peaks(A,B)=(10,12), N=9
+bit=bit7 alpha=0 beta=22.5
+  starts(A,B)=(38, 38), start_used(min)=38
+  peaks(A,B)=(8,9), N=8
+bit=bit6 alpha=0 beta=67.5
+  starts(A,B)=(59, 58), start_used(min)=58
+  peaks(A,B)=(10,19), N=9
+bit=bit5 alpha=0 beta=112.5
+  starts(A,B)=(28, 27), start_used(min)=27
+  peaks(A,B)=(9,10), N=0
+bit=bit12 alpha=45 beta=-22.5
+  starts(A,B)=(35, 34), start_used(min)=34
+  peaks(A,B)=(10,11), N=3
+bit=bit3 alpha=45 beta=22.5
+  starts(A,B)=(141, 141), start_used(min)=141
+  peaks(A,B)=(9,9), N=9
+bit=bit2 alpha=45 beta=67.5
+  starts(A,B)=(64, 64), start_used(min)=64
+  peaks(A,B)=(7,19), N=7
+bit=bit1 alpha=45 beta=112.5
+  starts(A,B)=(48, 49), start_used(min)=48
+  peaks(A,B)=(9,10), N=0
+bit=bit16 alpha=90 beta=-22.5
+  starts(A,B)=(191, 39), start_used(min)=39
+  peaks(A,B)=(10,9), N=0
+bit=bit15 alpha=90 beta=22.5
+  starts(A,B)=(236, 42), start_used(min)=42
+  peaks(A,B)=(10,9), N=0
+bit=bit14 alpha=90 beta=67.5
+  starts(A,B)=(208, 29), start_used(min)=29
+  peaks(A,B)=(9,19), N=9
+bit=bit13 alpha=90 beta=112.5
+  starts(A,B)=(218, 43), start_used(min)=43
+  peaks(A,B)=(9,19), N=9
+
+=================================================
+[2026-02-04 15:49:35] Part B run
+data_dir: /Users/ranle/Downloads/RanNofit/RanNofit2/partb
+roi_cache: roi_cache_partB.json
+threshold=0.81, peak_distance=20, window=12
+bit=bit4 alpha=-45 beta=-22.5
+  starts(A,B)=(58, 58), start_used(min)=58
+  peaks(A,B)=(11,9), N=9
+bit=bit11 alpha=-45 beta=22.5
+  starts(A,B)=(92, 89), start_used(min)=89
+  peaks(A,B)=(10,8), N=0
+bit=bit10 alpha=-45 beta=67.5
+  starts(A,B)=(49, 51), start_used(min)=49
+  peaks(A,B)=(9,19), N=9
+bit=bit9 alpha=-45 beta=112.5
+  starts(A,B)=(24, 25), start_used(min)=24
+  peaks(A,B)=(10,10), N=10
+bit=bit8 alpha=0 beta=-22.5
+  starts(A,B)=(81, 80), start_used(min)=80
+  peaks(A,B)=(10,12), N=9
+bit=bit7 alpha=0 beta=22.5
+  starts(A,B)=(38, 38), start_used(min)=38
+  peaks(A,B)=(8,9), N=8
+bit=bit6 alpha=0 beta=67.5
+  starts(A,B)=(59, 58), start_used(min)=58
+  peaks(A,B)=(10,19), N=9
+bit=bit5 alpha=0 beta=112.5
+  starts(A,B)=(28, 27), start_used(min)=27
+  peaks(A,B)=(9,10), N=0
+bit=bit12 alpha=45 beta=-22.5
+  starts(A,B)=(35, 34), start_used(min)=34
+  peaks(A,B)=(10,11), N=3
+bit=bit3 alpha=45 beta=22.5
+  starts(A,B)=(141, 141), start_used(min)=141
+  peaks(A,B)=(9,9), N=9
+bit=bit2 alpha=45 beta=67.5
+  starts(A,B)=(64, 64), start_used(min)=64
+  peaks(A,B)=(7,19), N=7
+bit=bit1 alpha=45 beta=112.5
+  starts(A,B)=(48, 49), start_used(min)=48
+  peaks(A,B)=(9,10), N=0
+bit=bit16 alpha=90 beta=-22.5
+  starts(A,B)=(191, 39), start_used(min)=39
+  peaks(A,B)=(10,9), N=0
+bit=bit15 alpha=90 beta=22.5
+  starts(A,B)=(236, 42), start_used(min)=42
+  peaks(A,B)=(10,9), N=0
+bit=bit14 alpha=90 beta=67.5
+  starts(A,B)=(208, 29), start_used(min)=29
+  peaks(A,B)=(9,19), N=9
+bit=bit13 alpha=90 beta=112.5
+  starts(A,B)=(218, 43), start_used(min)=43
+  peaks(A,B)=(9,19), N=9
+
+=================================================
+[2026-02-04 15:51:53] Part B run
+data_dir: /Users/ranle/Downloads/RanNofit/RanNofit2/partb
+roi_cache: roi_cache_partB.json
+threshold=0.81, peak_distance=20, window=12
+bit=bit4 alpha=-45 beta=-22.5
+  starts(A,B)=(58, 58), start_used(min)=58
+  peaks(A,B)=(11,9), N=9
+bit=bit11 alpha=-45 beta=22.5
+  starts(A,B)=(92, 89), start_used(min)=89
+  peaks(A,B)=(10,8), N=0
+bit=bit10 alpha=-45 beta=67.5
+  starts(A,B)=(49, 51), start_used(min)=49
+  peaks(A,B)=(9,19), N=9
+bit=bit9 alpha=-45 beta=112.5
+  starts(A,B)=(24, 25), start_used(min)=24
+  peaks(A,B)=(10,10), N=10
+bit=bit8 alpha=0 beta=-22.5
+  starts(A,B)=(81, 80), start_used(min)=80
+  peaks(A,B)=(10,12), N=9
+bit=bit7 alpha=0 beta=22.5
+  starts(A,B)=(38, 38), start_used(min)=38
+  peaks(A,B)=(8,9), N=8
+bit=bit6 alpha=0 beta=67.5
+  starts(A,B)=(59, 58), start_used(min)=58
+  peaks(A,B)=(10,19), N=9
+bit=bit5 alpha=0 beta=112.5
+  starts(A,B)=(28, 27), start_used(min)=27
+  peaks(A,B)=(9,10), N=0
+bit=bit12 alpha=45 beta=-22.5
+  starts(A,B)=(35, 34), start_used(min)=34
+  peaks(A,B)=(10,11), N=3
+bit=bit3 alpha=45 beta=22.5
+  starts(A,B)=(141, 141), start_used(min)=141
+  peaks(A,B)=(9,9), N=9
+bit=bit2 alpha=45 beta=67.5
+  starts(A,B)=(64, 64), start_used(min)=64
+  peaks(A,B)=(7,19), N=7
+bit=bit1 alpha=45 beta=112.5
+  starts(A,B)=(48, 49), start_used(min)=48
+  peaks(A,B)=(9,10), N=0
+bit=bit16 alpha=90 beta=-22.5
+  starts(A,B)=(191, 39), start_used(min)=39
+  peaks(A,B)=(10,9), N=0
+bit=bit15 alpha=90 beta=22.5
+  starts(A,B)=(236, 42), start_used(min)=42
+  peaks(A,B)=(10,9), N=0
+bit=bit14 alpha=90 beta=67.5
+  starts(A,B)=(208, 29), start_used(min)=29
+  peaks(A,B)=(9,19), N=9
+bit=bit13 alpha=90 beta=112.5
+  starts(A,B)=(218, 43), start_used(min)=43
+  peaks(A,B)=(9,19), N=9
+
+=================================================
+[2026-02-04 15:57:31] Part B run
+data_dir: /Users/ranle/Downloads/RanNofit/RanNofit2/partb
+roi_cache: roi_cache_partB.json
+threshold=0.81, peak_distance=20, window=12
+bit=bit4 alpha=-45 beta=-22.5
+  starts(A,B)=(58, 58), start_used(min)=58
+  peaks(A,B)=(11,9), N=9
+bit=bit11 alpha=-45 beta=22.5
+  starts(A,B)=(92, 89), start_used(min)=89
+  peaks(A,B)=(10,8), N=0
+bit=bit10 alpha=-45 beta=67.5
+  starts(A,B)=(49, 51), start_used(min)=49
+  peaks(A,B)=(9,19), N=9
+bit=bit9 alpha=-45 beta=112.5
+  starts(A,B)=(24, 25), start_used(min)=24
+  peaks(A,B)=(10,10), N=10
+bit=bit8 alpha=0 beta=-22.5
+  starts(A,B)=(81, 80), start_used(min)=80
+  peaks(A,B)=(10,12), N=9
+bit=bit7 alpha=0 beta=22.5
+  starts(A,B)=(38, 38), start_used(min)=38
+  peaks(A,B)=(8,9), N=8
+bit=bit6 alpha=0 beta=67.5
+  starts(A,B)=(59, 58), start_used(min)=58
+  peaks(A,B)=(10,19), N=9
+bit=bit5 alpha=0 beta=112.5
+  starts(A,B)=(28, 27), start_used(min)=27
+  peaks(A,B)=(9,10), N=0
+bit=bit12 alpha=45 beta=-22.5
+  starts(A,B)=(35, 34), start_used(min)=34
+  peaks(A,B)=(10,11), N=3
+bit=bit3 alpha=45 beta=22.5
+  starts(A,B)=(141, 141), start_used(min)=141
+  peaks(A,B)=(9,9), N=9
+bit=bit2 alpha=45 beta=67.5
+  starts(A,B)=(64, 64), start_used(min)=64
+  peaks(A,B)=(7,19), N=7
+bit=bit1 alpha=45 beta=112.5
+  starts(A,B)=(48, 49), start_used(min)=48
+  peaks(A,B)=(9,10), N=0
+bit=bit16 alpha=90 beta=-22.5
+  starts(A,B)=(191, 39), start_used(min)=39
+  peaks(A,B)=(10,9), N=0
+bit=bit15 alpha=90 beta=22.5
+  starts(A,B)=(236, 42), start_used(min)=42
+  peaks(A,B)=(10,9), N=0
+bit=bit14 alpha=90 beta=67.5
+  starts(A,B)=(208, 29), start_used(min)=29
+  peaks(A,B)=(9,19), N=9
+bit=bit13 alpha=90 beta=112.5
+  starts(A,B)=(218, 43), start_used(min)=43
+  peaks(A,B)=(9,19), N=9
+
+=================================================
+[2026-02-05 08:23:32] Part B run
+data_dir: /Users/ranle/Downloads/RanNofit/RanNofit2/partb
+roi_cache: roi_cache_partB.json
+threshold=0.81, peak_distance=20, window=12
+bit=bit4 alpha=-45 beta=-22.5
+  starts(A,B)=(58, 58), start_used(min)=58
+  peaks(A,B)=(11,9), N=9
+bit=bit11 alpha=-45 beta=22.5
+  starts(A,B)=(92, 89), start_used(min)=89
+  peaks(A,B)=(10,8), N=0
+bit=bit10 alpha=-45 beta=67.5
+  starts(A,B)=(49, 51), start_used(min)=49
+  peaks(A,B)=(9,19), N=9
+bit=bit9 alpha=-45 beta=112.5
+  starts(A,B)=(24, 25), start_used(min)=24
+  peaks(A,B)=(10,10), N=10
+bit=bit8 alpha=0 beta=-22.5
+  starts(A,B)=(81, 80), start_used(min)=80
+  peaks(A,B)=(10,12), N=9
+bit=bit7 alpha=0 beta=22.5
+  starts(A,B)=(38, 38), start_used(min)=38
+  peaks(A,B)=(8,9), N=8
+bit=bit6 alpha=0 beta=67.5
+  starts(A,B)=(59, 58), start_used(min)=58
+  peaks(A,B)=(10,19), N=9
+bit=bit5 alpha=0 beta=112.5
+  starts(A,B)=(28, 27), start_used(min)=27
+  peaks(A,B)=(9,10), N=0
+bit=bit12 alpha=45 beta=-22.5
+  starts(A,B)=(35, 34), start_used(min)=34
+  peaks(A,B)=(10,11), N=3
+bit=bit3 alpha=45 beta=22.5
+  starts(A,B)=(141, 141), start_used(min)=141
+  peaks(A,B)=(9,9), N=9
+bit=bit2 alpha=45 beta=67.5
+  starts(A,B)=(64, 64), start_used(min)=64
+  peaks(A,B)=(7,19), N=7
+bit=bit1 alpha=45 beta=112.5
+  starts(A,B)=(48, 49), start_used(min)=48
+  peaks(A,B)=(9,10), N=0
+bit=bit16 alpha=90 beta=-22.5
+  starts(A,B)=(191, 39), start_used(min)=39
+  peaks(A,B)=(10,9), N=0
+bit=bit15 alpha=90 beta=22.5
+  starts(A,B)=(236, 42), start_used(min)=42
+  peaks(A,B)=(10,9), N=0
+bit=bit14 alpha=90 beta=67.5
+  starts(A,B)=(208, 29), start_used(min)=29
+  peaks(A,B)=(9,19), N=9
+bit=bit13 alpha=90 beta=112.5
+  starts(A,B)=(218, 43), start_used(min)=43
+  peaks(A,B)=(9,19), N=9
+
+=================================================
+[2026-02-05 08:29:40] Part B run
+data_dir: /Users/ranle/Downloads/RanNofit/RanNofit2/partb
+roi_cache: roi_cache_partB.json
+threshold=0.81, peak_distance=20, window=12
+bit=bit4 alpha=-45 beta=-22.5
+  starts(A,B)=(58, 58), start_used(min)=58
+  peaks(A,B)=(11,9), N=9
+bit=bit11 alpha=-45 beta=22.5
+  starts(A,B)=(92, 89), start_used(min)=89
+  peaks(A,B)=(10,8), N=0
+bit=bit10 alpha=-45 beta=67.5
+  starts(A,B)=(49, 51), start_used(min)=49
+  peaks(A,B)=(9,19), N=9
+bit=bit9 alpha=-45 beta=112.5
+  starts(A,B)=(24, 25), start_used(min)=24
+  peaks(A,B)=(10,10), N=10
+bit=bit8 alpha=0 beta=-22.5
+  starts(A,B)=(81, 80), start_used(min)=80
+  peaks(A,B)=(10,12), N=9
+bit=bit7 alpha=0 beta=22.5
+  starts(A,B)=(38, 38), start_used(min)=38
+  peaks(A,B)=(8,9), N=8
+bit=bit6 alpha=0 beta=67.5
+  starts(A,B)=(59, 58), start_used(min)=58
+  peaks(A,B)=(10,19), N=9
+bit=bit5 alpha=0 beta=112.5
+  starts(A,B)=(28, 27), start_used(min)=27
+  peaks(A,B)=(9,10), N=0
+bit=bit12 alpha=45 beta=-22.5
+  starts(A,B)=(35, 34), start_used(min)=34
+  peaks(A,B)=(10,11), N=3
+bit=bit3 alpha=45 beta=22.5
+  starts(A,B)=(141, 141), start_used(min)=141
+  peaks(A,B)=(9,9), N=9
+bit=bit2 alpha=45 beta=67.5
+  starts(A,B)=(64, 64), start_used(min)=64
+  peaks(A,B)=(7,19), N=7
+bit=bit1 alpha=45 beta=112.5
+  starts(A,B)=(48, 49), start_used(min)=48
+  peaks(A,B)=(9,10), N=0
+bit=bit16 alpha=90 beta=-22.5
+  starts(A,B)=(191, 39), start_used(min)=39
+  peaks(A,B)=(10,9), N=0
+bit=bit15 alpha=90 beta=22.5
+  starts(A,B)=(236, 42), start_used(min)=42
+  peaks(A,B)=(10,9), N=0
+bit=bit14 alpha=90 beta=67.5
+  starts(A,B)=(208, 29), start_used(min)=29
+  peaks(A,B)=(9,19), N=9
+bit=bit13 alpha=90 beta=112.5
+  starts(A,B)=(218, 43), start_used(min)=43
+  peaks(A,B)=(9,19), N=9
+
+=================================================
+[2026-02-06 13:36:04] Part B run
+data_dir: /Users/ranle/Downloads/RanNofit/RanNofit2/partb
+roi_cache: roi_cache_partB.json
+threshold=0.81, peak_distance=20, window=12
+bit=bit4 alpha=-45 beta=-22.5
+  starts(A,B)=(58, 58), start_used(min)=58
+  peaks(A,B)=(11,9), N=9
+bit=bit11 alpha=-45 beta=22.5
+  starts(A,B)=(92, 89), start_used(min)=89
+  peaks(A,B)=(10,8), N=0
+bit=bit10 alpha=-45 beta=67.5
+  starts(A,B)=(49, 51), start_used(min)=49
+  peaks(A,B)=(9,19), N=9
+bit=bit9 alpha=-45 beta=112.5
+  starts(A,B)=(24, 25), start_used(min)=24
+  peaks(A,B)=(10,10), N=10
+bit=bit8 alpha=0 beta=-22.5
+  starts(A,B)=(81, 80), start_used(min)=80
+  peaks(A,B)=(10,12), N=9
+bit=bit7 alpha=0 beta=22.5
+  starts(A,B)=(38, 38), start_used(min)=38
+  peaks(A,B)=(8,9), N=8
+bit=bit6 alpha=0 beta=67.5
+  starts(A,B)=(59, 58), start_used(min)=58
+  peaks(A,B)=(10,19), N=9
+bit=bit5 alpha=0 beta=112.5
+  starts(A,B)=(28, 27), start_used(min)=27
+  peaks(A,B)=(9,10), N=0
+bit=bit12 alpha=45 beta=-22.5
+  starts(A,B)=(35, 34), start_used(min)=34
+  peaks(A,B)=(10,11), N=3
+bit=bit3 alpha=45 beta=22.5
+  starts(A,B)=(141, 141), start_used(min)=141
+  peaks(A,B)=(9,9), N=9
+bit=bit2 alpha=45 beta=67.5
+  starts(A,B)=(64, 64), start_used(min)=64
+  peaks(A,B)=(7,19), N=7
+bit=bit1 alpha=45 beta=112.5
+  starts(A,B)=(48, 49), start_used(min)=48
+  peaks(A,B)=(9,10), N=0
+bit=bit16 alpha=90 beta=-22.5
+  starts(A,B)=(191, 39), start_used(min)=39
+  peaks(A,B)=(10,9), N=0
+bit=bit15 alpha=90 beta=22.5
+  starts(A,B)=(236, 42), start_used(min)=42
+  peaks(A,B)=(10,9), N=0
+bit=bit14 alpha=90 beta=67.5
+  starts(A,B)=(208, 29), start_used(min)=29
+  peaks(A,B)=(9,19), N=9
+bit=bit13 alpha=90 beta=112.5
+  starts(A,B)=(218, 43), start_used(min)=43
+  peaks(A,B)=(9,19), N=9
+
+=================================================
+[2026-02-06 13:45:27] Part B run
+data_dir: /Users/ranle/Downloads/RanNofit/RanNofit2/partb
+roi_cache: roi_cache_partB.json
+threshold=0.81, peak_distance=20, window=12
+bit=bit4 alpha=-45 beta=-22.5
+  starts(A,B)=(58, 58), start_used(min)=58
+  peaks(A,B)=(11,9), N=9
+bit=bit11 alpha=-45 beta=22.5
+  starts(A,B)=(92, 89), start_used(min)=89
+  peaks(A,B)=(10,8), N=0
+bit=bit10 alpha=-45 beta=67.5
+  starts(A,B)=(49, 51), start_used(min)=49
+  peaks(A,B)=(9,19), N=9
+bit=bit9 alpha=-45 beta=112.5
+  starts(A,B)=(24, 25), start_used(min)=24
+  peaks(A,B)=(10,10), N=10
+bit=bit8 alpha=0 beta=-22.5
+  starts(A,B)=(81, 80), start_used(min)=80
+  peaks(A,B)=(10,12), N=9
+bit=bit7 alpha=0 beta=22.5
+  starts(A,B)=(38, 38), start_used(min)=38
+  peaks(A,B)=(8,9), N=8
+bit=bit6 alpha=0 beta=67.5
+  starts(A,B)=(59, 58), start_used(min)=58
+  peaks(A,B)=(10,19), N=9
+bit=bit5 alpha=0 beta=112.5
+  starts(A,B)=(28, 27), start_used(min)=27
+  peaks(A,B)=(9,10), N=0
+bit=bit12 alpha=45 beta=-22.5
+  starts(A,B)=(35, 34), start_used(min)=34
+  peaks(A,B)=(10,11), N=3
+bit=bit3 alpha=45 beta=22.5
+  starts(A,B)=(141, 141), start_used(min)=141
+  peaks(A,B)=(9,9), N=9
+bit=bit2 alpha=45 beta=67.5
+  starts(A,B)=(64, 64), start_used(min)=64
+  peaks(A,B)=(7,19), N=7
+bit=bit1 alpha=45 beta=112.5
+  starts(A,B)=(48, 49), start_used(min)=48
+  peaks(A,B)=(9,10), N=0
+bit=bit16 alpha=90 beta=-22.5
+  starts(A,B)=(191, 39), start_used(min)=39
+  peaks(A,B)=(10,9), N=0
+bit=bit15 alpha=90 beta=22.5
+  starts(A,B)=(236, 42), start_used(min)=42
+  peaks(A,B)=(10,9), N=0
+bit=bit14 alpha=90 beta=67.5
+  starts(A,B)=(208, 29), start_used(min)=29
+  peaks(A,B)=(9,19), N=9
+bit=bit13 alpha=90 beta=112.5
+  starts(A,B)=(218, 43), start_used(min)=43
+  peaks(A,B)=(9,19), N=9
