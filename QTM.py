@@ -3,7 +3,6 @@ import re
 import json
 from dataclasses import dataclass
 from datetime import datetime
-
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -299,6 +298,69 @@ def plot_rho_3d(ax, rho: np.ndarray, title: str, cfg: Config) -> None:
     ax.figure.colorbar(sm, ax=ax, shrink=0.6, pad=0.08, label=r"$|\rho_{ij}|$")
 
 
+def simulate_part_a_signals(cfg: Config, n_shots: int = 100, seed: int | None = None) -> list[np.ndarray]:
+    rng = np.random.default_rng(seed)
+
+    alice_bits = rng.integers(0, 2, size=n_shots)
+    bob_bits = alice_bits.copy()
+
+    pre = 60
+    gap = max(cfg.peak_distance + 5, 30)
+    T = pre + n_shots * gap + 60
+
+    base = 50
+    peak = max(cfg.red_start_threshold + 500, 4000)
+
+    A_V = np.full(T, base, dtype=np.int64)
+    A_H = np.full(T, base, dtype=np.int64)
+    B_V = np.full(T, base, dtype=np.int64)
+    B_H = np.full(T, base, dtype=np.int64)
+
+    for k in range(n_shots):
+        t = pre + k * gap
+        if alice_bits[k] == 0:
+            A_H[t] = peak
+        else:
+            A_V[t] = peak
+        if bob_bits[k] == 0:
+            B_H[t] = peak
+        else:
+            B_V[t] = peak
+
+    return [A_V, A_H, B_V, B_H]
+
+
+def run_part_a_simulation(cfg: Config, n_shots: int = 100, seed: int | None = None) -> None:
+    sigs = simulate_part_a_signals(cfg, n_shots=n_shots, seed=seed)
+    pks = [peaks_from(s, cfg) for s in sigs]
+
+    N = counts_HV_basis(pks, cfg, bob_swap=False)
+    rhoA = rho_phi(*N)
+
+    N2 = counts_HV_basis(pks, cfg, bob_swap=True)
+    rhoB = rho_psi(*N2)
+
+    print(f"\n--- PART A SIMULATION ({n_shots} shots) ---")
+    print("N(HH,HV,VH,VV) no-swap =", N)
+    print("HVVH rho=\n", np.round(rhoA, 4))
+    print("N(HH,HV,VH,VV) swap    =", N2)
+    print("HHVV rho=\n", np.round(rhoB, 4))
+
+    fig = plt.figure(figsize=(10, 5))
+    ax1 = fig.add_subplot(1, 2, 1, projection="3d")
+    plot_rho_3d(ax1, rhoA, f"SIM HVVH ({n_shots})", cfg)
+    ax2 = fig.add_subplot(1, 2, 2, projection="3d")
+    plot_rho_3d(ax2, rhoB, f"SIM HHVV ({n_shots})", cfg)
+
+    fig.tight_layout()
+    fig.savefig("PartA_simulation_density_matrices.png", dpi=300)
+
+    if cfg.show_plots:
+        plt.show(block=False)
+        plt.pause(0.1)
+    plt.close(fig)
+
+
 def run_part_a(cfg: Config, force_reselect_roi: bool) -> None:
     files = []
     for fn in os.listdir(cfg.data_dir_a):
@@ -356,6 +418,8 @@ def run_part_a(cfg: Config, force_reselect_roi: bool) -> None:
         plt.show(block=False)
         plt.pause(0.1)
     plt.close(fig)
+    run_part_a_simulation(cfg, n_shots=100, seed=1)
+
 
 
 # Part B
@@ -469,6 +533,9 @@ def parse_args():
     p.add_argument("--only-b", action="store_true", help="Run only Part B.")
     p.add_argument("--reselect-roi-a", action="store_true", help="Force reselect ROI for Part A (ignore cache).")
     p.add_argument("--reselect-roi-b", action="store_true", help="Force reselect ROI for Part B (ignore cache).")
+    p.add_argument("--sim-a", action="store_true", help="Run Part A simulation (synthetic signals).")
+    p.add_argument("--sim-shots", type=int, default=100, help="Number of simulated shots for --sim-a.")
+    p.add_argument("--sim-seed", type=int, default=None, help="Random seed for --sim-a.")
     return p.parse_args()
 
 
@@ -476,6 +543,9 @@ if __name__ == "__main__":
     args = parse_args()
     if args.no_show:
         CFG.show_plots = False
+
+    if args.sim_a:
+        run_part_a_simulation(CFG, n_shots=args.sim_shots, seed=args.sim_seed)
 
     run_a = True
     run_b = True
@@ -488,4 +558,3 @@ if __name__ == "__main__":
         run_part_a(CFG, force_reselect_roi=args.reselect_roi_a)
     if run_b:
         run_part_b(CFG, force_reselect_roi=args.reselect_roi_b)
-
