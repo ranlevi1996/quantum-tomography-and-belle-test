@@ -1,4 +1,4 @@
-# Quantum Tomography And Belle Test
+# Quantum Tomography And Bell Test
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![OpenCV](https://img.shields.io/badge/OpenCV-cv2-green)
@@ -9,96 +9,104 @@ This project is part of **Physics Laboratory C** (undergraduate course) in the S
 The experiment follows a classical-optical implementation that reproduces the *measurement workflow* used in quantum optics: **density-matrix reconstruction (tomography)** and a **Bell-inequality (CHSH) evaluation**.
 
 **Part A – Tomography:** the density matrix is reconstructed from **three datasets** consisting of **10 / 25 / 50 red-laser pulses**, by extracting coincidence statistics in polarization channels and building the corresponding density-matrix elements.  
-**Part B – Bell test:** the **Bell parameter S** is extracted from **16 measurement settings** (a 4×4 grid of analyzer angles). Each setting contains **20 pulses**, measured for different \(\alpha\) and \(\beta\) combinations (\(\alpha,\alpha'\) and \(\beta,\beta'\)) according to the angle table in the reference article and the standard angles used in the lab.
+
+**Part B – Bell test:** the **Bell parameter S** is extracted from **16 measurement settings** (a 4×4 grid of analyzer angles). Each setting contains **20 pulses**, measured for different analyzer-angle combinations \((\alpha,\alpha')\) and \((\beta,\beta')\), according to the angle table in the reference article and the standard angles used in the laboratory experiment.
+
+---
 
 ## What the Code Does (Workflow)
 The analysis is performed offline on recorded webcam videos of the detector outputs.
 
-1. **ROI definition (once):** the user selects rectangular Regions of Interest (ROIs) on the first frame (Part A: 4 ROIs; Part B: 2 ROIs). ROIs are cached to JSON files to avoid repeated manual selection.
+1. **ROI definition (once):** the user selects rectangular Regions of Interest (ROIs) on the first frame  
+   (Part A: 4 ROIs; Part B: 2 ROIs). ROIs are cached to JSON files to avoid repeated manual selection.
 2. **Signal extraction:** for each frame, the code isolates **red intensity** (HSV thresholding for red) inside each ROI and builds a time-series signal per channel.
 3. **Pulse detection:** signals are normalized and pulses are detected using `scipy.signal.find_peaks` with configurable threshold and minimum peak distance.
 4. **Coincidence counting:** peaks from Alice and Bob channels are matched within a configurable time window to compute coincidence counts.
-5. **Part A products:** coincidence counts in the HV basis are converted to two reconstructed density matrices (two ordering conventions are produced).
+5. **Part A products:** coincidence counts in the HV basis are converted to reconstructed density matrices.
 6. **Part B products:** coincidence counts are computed for all 16 angle settings, plotted as a 4×4 diagnostic grid, and used to calculate the Bell parameter \(S\).
 
 The script can run Part A only, Part B only, or both, and can optionally force ROI re-selection.
 
-## Key Functions (One-Line Descriptions)
+---
+
+## Inputs
+The analysis relies on the following inputs:
+
+1. **Experimental video files**
+   - **Part A:** video files named `partbXXbits.mp4` (e.g. 10, 25, 50 bits) located in the directory specified by `CFG.data_dir_a`.
+   - **Part B:** video files named `bit1.mp4` to `bit16.mp4` located in `CFG.data_dir_b`.
+
+2. **Manual ROI selection**
+   - During the first run, the user selects regions of interest (ROI) using an interactive OpenCV GUI.
+   - The selected ROIs are saved to cache files (`roi_cache_partA.json`, `roi_cache_partB.json`) and reused in subsequent runs unless re-selection is forced.
+
+3. **Algorithm parameters**
+   - Signal thresholds, peak-detection parameters, coincidence window size, and analyzer angles are defined in the `Config` dataclass and control the full analysis flow.
+
+4. **Command-line flags**   ****Check it***
+   - Optional CLI arguments allow running only Part A or Part B, disabling plot display, or forcing ROI re-selection.
+
+---
+
+## Key Functions
 
 ### Utility / IO
-- **_now()**  
-  Returns a timestamp string used for logs and report headers.
-
-- **save_roi_cache(path, video_path, labels, rois, cfg)**  
-  Writes selected ROIs to a JSON cache file (including labels and resize factor) for reuse across runs.
-
-- **load_roi_cache(path, expected_labels)**  
-  Loads ROIs from a JSON cache if it exists and matches the expected ROI labels; otherwise returns `None`.
-
-- **append_report(path, lines)**  
-  Appends formatted diagnostic lines to a text quality report file.
+- **_now()** – returns a timestamp string for logs and reports.  
+- **save_roi_cache(...)** – saves selected ROIs to a JSON cache file.  
+- **load_roi_cache(...)** – loads cached ROIs if they match the expected labels.  
+- **append_report(...)** – appends diagnostic information to a text report file.
 
 ### Signal Processing
-- **normalize_signal(x)**  
-  Converts a raw signal to a \([0,1]\) normalized signal using min–max scaling (returns zeros if the signal is flat).
+- **normalize_signal(x)** – rescales a signal to the polirazer ( 0 or 1 ).  
+- **red_sum_in_roi(frame, roi)** – computes red-intensity sum inside an ROI using HSV masking.  
+- **first_red_index(sig, thr, max_frames)** – finds the first frame containing a significant red signal.  
+- **coincidences(peaks_a, peaks_b, window)** – counts matched coincidence events within a frame window.
 
-- **red_sum_in_roi(frame_bgr, roi)**  
-  Computes the total red-mask intensity inside an ROI using HSV thresholding for red pixels.
+### ROI Selection
+- **select_roi_white(...)** – interactive GUI for drawing a rectangular ROI.  
+- **select_rois_once(...)** – collects ROIs from the first frame of a reference video.  
+- **get_rois_with_cache(...)** – loads ROIs from cache or triggers manual selection.
 
-- **first_red_index(sig, thr, max_frames)**  
-  Finds the first frame index where the signal crosses a red-intensity threshold (used for alignment/start trimming).
+---
 
-- **coincidences(peaks_a, peaks_b, window)**  
-  Counts one-to-one matched peak pairs between two peak lists within a given frame-distance window.
+## Part A – Quantum Tomography And Dentisy Matrix
+- **read_signals_nroi(...)** – extracts and aligns red-intensity signals from four ROIs.  
+- **peaks_from(...)** – detects pulse peaks in a normalized signal.  
+- **counts_HV_basis(...)** – computes coincidence counts in the HV polarization basis.  
+- **rho_phi(...)** – reconstructs a density matrix dominated by \(|HH\rangle\) and \(|VV\rangle\).  
+- **rho_psi(...)** – reconstructs a density matrix dominated by \(|HV\rangle\) and \(|VH\rangle\).  
+- **plot_rho_3d(...)** – visualizes the absolute density-matrix elements in 3D.  
+- **run_part_a(...)** – executes the full tomography pipeline and saves density-matrix plots.
 
-### ROI Selection (GUI)
-- **select_roi_white(win, img_bgr)**  
-  Provides an interactive OpenCV GUI to draw a rectangular ROI (white rectangle) and returns \((x,y,w,h)\).
+---
 
-- **select_rois_once(video_path, labels, cfg)**  
-  Opens the first frame of a reference video and collects ROIs for all requested labels (scaled back to original resolution).
+## Part B – Bell Inequality Test
+- **read_signals_2roi(...)** – extracts aligned signals for Alice and Bob detectors.  
+- **canon_alpha(...)** – maps analyzer angle \(\alpha\) to the nearest canonical value.  
+- **canon_beta(...)** – maps analyzer angle \(\beta\) to the nearest canonical value.  
+- **run_part_b(...)** – processes all 16 measurements, computes correlations, and evaluates the Bell parameter \(S\).
 
-- **get_rois_with_cache(cache_path, video_path, labels, cfg, force_reselect)**  
-  Loads ROIs from cache when available; otherwise triggers GUI selection once and saves the result to cache.
+---
 
-## Part A (Tomography)
-- **read_signals_nroi(video_path, rois, cfg)**  
-  Extracts red-intensity time-series for all four ROIs, aligns them by a detected start index, and trims to equal length.
+## Outputs
+The code produces the following outputs:
 
-- **peaks_from(sig, cfg)**  
-  Normalizes a signal and extracts pulse indices using `find_peaks` with the configured threshold and minimum distance.
+- **Figures**
+  - `PartA_density_matrices.png` – 3D visualizations of reconstructed density matrices.
+  - `PartB_grid.png` – 4×4 grid of normalized signals for all Bell-test angle settings.
 
-- **counts_HV_basis(peaks4, cfg, bob_swap=False)**  
-  Converts four peak lists (A_V, A_H, B_V, B_H) into coincidence counts \((N_{HH}, N_{HV}, N_{VH}, N_{VV})\), with optional Bob channel swap.
+- **Text reports**
+  - `quality_report_partA.txt` – diagnostic information for tomography runs.
+  - `quality_report_partB.txt` – diagnostic information for Bell-test runs.
 
-- **rho_phi(N_HH, N_HV, N_VH, N_VV)**  
-  Builds a 4×4 density matrix emphasizing the \(|HH\rangle\) and \(|VV\rangle\) populations with a coherence term estimated from probabilities.
+- **Console output**
+  - Printed density matrices (Part A).
+  - Printed Bell parameter \(S\) (Part B).
 
-- **rho_psi(N_HH, N_HV, N_VH, N_VV)**  
-  Builds a 4×4 density matrix emphasizing the \(|HV\rangle\) and \(|VH\rangle\) populations with a coherence term estimated from probabilities.
-
-- **plot_rho_3d(ax, rho, title, cfg)**  
-  Produces a 3D bar visualization of \(|\rho_{ij}|\) with a colormap and saves a colorbar for interpretation.
-
-- **run_part_a(cfg, force_reselect_roi)**  
-  Runs Part A end-to-end: loads videos, selects/loads ROIs, extracts signals, detects peaks, computes coincidence counts, reconstructs two density matrices per dataset, and saves the summary figure.
-
-## Part B (Bell Parameter)
-- **read_signals_2roi(video_path, rois2, cfg)**  
-  Extracts and aligns red-intensity signals for the two ROIs (Alice, Bob) from a given measurement video.
-
-- **canon_alpha(a, cfg)**  
-  Maps a given \(\alpha\) angle into the nearest canonical \(\alpha\) value used in the experiment (handles wrap-around).
-
-- **canon_beta(b, cfg)**  
-  Maps a given \(\beta\) angle into the nearest canonical \(\beta\) value used in the experiment (handles wrap-around conventions).
-
-- **run_part_b(cfg, force_reselect_roi)**  
-  Runs Part B end-to-end: loads ROIs, processes all 16 videos, counts coincidences per \((\alpha,\beta)\), saves a 4×4 diagnostic plot grid, computes correlators \(E(\alpha,\beta)\), and prints the Bell parameter \(S\).
+---
 
 ## Command-Line Interface
-- **parse_args()**  
-  Parses CLI flags to control execution (Part A only / Part B only, disable plotting, force ROI re-selection).
+- **parse_args()** – parses CLI flags to control execution.
 
 Run examples:
 ```bash
@@ -107,4 +115,5 @@ python your_script.py --only-a
 python your_script.py --only-b
 python your_script.py --no-show
 python your_script.py --reselect-roi-a
-python your_script.py --reselect-roi-b 
+python your_script.py --reselect-roi-b
+
